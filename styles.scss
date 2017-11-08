@@ -1,19 +1,16 @@
 @import "grid";
+@import "checkbox";
+@import "radio";
 
 .container {
     background-color: #eef1be;
     box-sizing: border-box;
     padding: 10px;
 }
-.row {
-    margin-right: -15px;
-    margin-left: -15px;
-}
 [class*='col-'] {
     align-items: center;
     display: flex;
     justify-content: space-around;
     outline: 1px solid #000;
-    padding: 0 15px;
 }
 

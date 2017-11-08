@@ -1,0 +1,49 @@
+[type="checkbox"] {
+    &:not(:checked),
+    &:checked {
+        position: absolute;
+        left: -9999px;
+    }
+    &:not(:checked),
+    &:checked {
+        & + label {
+            position: relative;
+            &:before {
+                content: '';
+                position: absolute;
+                left:0; 
+                top: 2px;
+                width: 15px; 
+                height: 15px;
+                border: 1px solid #aaa;
+                background: #f8f8f8;
+            }
+            &:after {
+                content: '\f00c';
+                font-family: 'FontAwesome';
+                position: absolute;
+                top: 4px; 
+                left: 2px;
+                font-size: 13px;
+                color: green;
+                transition: all .1s;
+            }
+        }
+    }
+    &:checked {
+        & + label {
+            &:after {
+                outline: 3px solid #eee;
+                transition: all .3s;
+                transform: scale(1);
+            }
+        }
+    }
+    &:not(:checked) {
+        & + label {
+            &:after {
+                transform: scale(0);
+            }
+        }
+    }
+}

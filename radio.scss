@@ -1,0 +1,51 @@
+[type="radio"] {
+    &:not(:checked),
+    &:checked {
+        position: absolute;
+        left: -9999px;
+    }
+    &:not(:checked),
+    &:checked {
+        & + label {
+            position: relative;
+            &:before {
+                content: '';
+                position: absolute;
+                left:0; 
+                top: 2px;
+                width: 15px; 
+                height: 15px;
+                border: 1px solid #aaa;
+                border-radius: 25px;
+                background: #f8f8f8;
+            }
+            &:after {
+                content: '\f111';
+                font-family: 'FontAwesome';
+                position: absolute;
+                top: 1px; 
+                left: 0px;
+                font-size: 13px;
+                color: green;
+                transition: all .1s;
+            }
+        }
+    }
+    &:checked {
+        & + label {
+            &:after {
+                border: 3px solid #eee;
+                border-radius: 25px;
+                transition: all .3s;
+                transform: scale(1);
+            }
+        }
+    }
+    &:not(:checked) {
+        & + label {
+            &:after {
+                transform: scale(0);
+            }
+        }
+    }
+}
